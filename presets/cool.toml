@@ -1,0 +1,86 @@
+# Profil d'Essaim « cool » (fenêtre des réglages).
+
+[audio]
+actif = true
+delai_kick = 0.1
+sensibilite_kick = 5.0
+
+[bordure]
+active = true
+repos = 0.5
+
+[couleur]
+application = true
+ecart_palette = 0.0
+ecart_teinte = 200.0
+palette = 1
+pochette = true
+site = true
+synchro_prisme = false
+teinte = 0.0
+vitesse_teinte = 0.0
+
+[declencheurs]
+liste = [{ delai = 0.0, faire = "onde", force = 0.5, nombre = 3, nombre_max = 3, probabilite = 1.0, quand = "kick" }, { delai = 0.0, faire = "bordure", force = 1.0, nombre = 3, nombre_max = 3, probabilite = 1.0, quand = "kick" }, { delai = 0.0, faire = "rafale", force = 1.0, nombre = 4, nombre_max = 4, probabilite = 1.0, quand = "drop" }, { delai = 0.0, faire = "satellites", force = 1.0, nombre = 3, nombre_max = 6, probabilite = 1.0, quand = "kick" }, { delai = 0.0, faire = "inversion", force = 1.0, nombre = 3, nombre_max = 3, probabilite = 1.0, quand = "kick" }, { delai = 0.0, faire = "implosion", force = 1.0, nombre = 3, nombre_max = 3, probabilite = 1.0, quand = "drop" }]
+
+[eclat]
+taille = 3.4
+
+[essaim]
+constellation = false
+duree = 1.6
+fixes = 0
+forme = "astroide"
+maximum = 3
+
+[fissures]
+duree = 3.0
+taille = 1.4
+
+[modulations]
+liste = [{ cible = "vitesse", inverser = false, lissage = 0.5, quantite = 0.15, seuil = 0.0, source = "basse", sur = "tout" }, { cible = "trainee", inverser = false, lissage = 0.2, quantite = -1.0, seuil = 0.0, source = "grave", sur = "cometes" }, { cible = "trainee", inverser = false, lissage = 0.35, quantite = 1.0, seuil = 0.0, source = "aigu", sur = "cometes" }, { cible = "rotation", inverser = false, lissage = 0.35, quantite = -1.0, seuil = 0.0, source = "kick", sur = "cometes" }, { cible = "acceleration", inverser = false, lissage = 0.35, quantite = 1.0, seuil = 0.0, source = "kick", sur = "tout" }, { cible = "rotation", inverser = false, lissage = 0.35, quantite = 1.0, seuil = 0.0, source = "grave", sur = "cometes" }, { cible = "taille", inverser = false, lissage = 0.35, quantite = -0.67, seuil = 0.0, source = "basse", sur = "cometes" }, { cible = "rayon", inverser = false, lissage = 0.35, quantite = 0.45, seuil = 0.0, source = "basse", sur = "tout" }, { cible = "teinte", inverser = false, lissage = 0.35, quantite = 0.5, seuil = 0.0, source = "basse", sur = "cometes" }, { cible = "acceleration", inverser = false, lissage = 0.35, quantite = 0.5, seuil = 0.0, source = "basse", sur = "satellites" }]
+
+[orbite]
+anneaux = 1
+cometes = true
+contours = [[[255.5, 2.2], [125.2, 276.5], [118.3, 291.5], [118.1, 293.5], [118.5, 294.0], [119.5, 293.2], [127.5, 281.1], [160.9, 228.5], [165.4, 220.5], [170.9, 212.5], [186.7, 187.5], [188.3, 184.5], [192.5, 178.5], [197.2, 170.5], [200.7, 165.5], [223.5, 129.5], [230.1, 118.5], [231.7, 116.5], [252.5, 83.5], [255.5, 79.0], [256.5, 78.4], [259.1, 81.5], [275.6, 107.5], [277.2, 110.5], [285.9, 123.5], [287.3, 126.5], [295.5, 138.9], [390.2, 289.5], [395.2, 296.5], [395.5, 296.9], [396.5, 296.8], [395.6, 293.5], [385.3, 271.5], [377.5, 255.5], [368.8, 236.5], [355.6, 208.5], [353.4, 204.5], [320.9, 135.5], [319.2, 132.5], [304.5, 100.5], [258.5, 3.5], [257.5, 1.9], [256.5, 1.5]], [[54.5, 154.1], [53.5, 155.5], [37.5, 198.5], [31.5, 213.5], [13.6, 261.5], [5.0, 283.5], [1.7, 293.5], [2.5, 294.4], [4.6, 291.5], [53.5, 194.3], [54.5, 192.9], [55.5, 193.0], [56.8, 194.5], [61.5, 203.5], [62.2, 205.5], [79.4, 239.5], [83.9, 247.5], [98.5, 277.1], [106.5, 292.5], [108.5, 294.9], [108.9, 293.5], [106.6, 286.5], [91.8, 247.5], [90.2, 244.5], [88.8, 239.5], [87.3, 236.5], [82.0, 221.5], [63.4, 173.5], [58.0, 158.5], [56.0, 154.5], [55.5, 154.0]], [[457.5, 153.7], [456.5, 154.6], [453.7, 161.5], [430.7, 222.5], [429.3, 225.5], [420.6, 249.5], [409.5, 277.9], [404.3, 292.5], [404.1, 293.5], [404.5, 294.2], [405.6, 293.5], [408.8, 287.5], [445.9, 214.5], [453.5, 199.5], [454.2, 197.5], [457.5, 192.6], [458.5, 192.8], [459.5, 194.5], [508.4, 291.5], [509.5, 293.4], [510.5, 294.1], [511.1, 293.5], [506.8, 280.5], [505.3, 277.5], [500.0, 262.5], [497.8, 257.5], [463.5, 166.5], [458.8, 154.5]]]
+forme = "astroide"
+inertie = 0.5
+nombre = 8
+rayon = 14.0
+rotation = 0.0
+rotation_sur = "cometes"
+trace = [[255.5, 2.2], [125.2, 276.5], [118.3, 291.5], [118.1, 293.5], [118.5, 294.0], [119.5, 293.2], [127.5, 281.1], [160.9, 228.5], [165.4, 220.5], [170.9, 212.5], [186.7, 187.5], [188.3, 184.5], [192.5, 178.5], [197.2, 170.5], [200.7, 165.5], [223.5, 129.5], [230.1, 118.5], [231.7, 116.5], [252.5, 83.5], [255.5, 79.0], [256.5, 78.4], [259.1, 81.5], [275.6, 107.5], [277.2, 110.5], [285.9, 123.5], [287.3, 126.5], [295.5, 138.9], [390.2, 289.5], [395.2, 296.5], [395.5, 296.9], [396.5, 296.8], [395.6, 293.5], [385.3, 271.5], [377.5, 255.5], [368.8, 236.5], [355.6, 208.5], [353.4, 204.5], [320.9, 135.5], [319.2, 132.5], [304.5, 100.5], [258.5, 3.5], [257.5, 1.9], [256.5, 1.5]]
+trainee = 0.3
+vitesse_base = 1.0
+
+[particules]
+rebonds = true
+taille = 1.0
+
+[projecteur]
+actif = true
+duree = 1.0
+opacite = 0.9
+taille = 60.0
+
+[reticule]
+actif = false
+epaisseur = 1.2
+opacite = 0.6
+taille = 40.0
+vide = 12.0
+
+[sillage]
+actif = false
+densite = 5.0
+
+[souris]
+jeu = "Dotter"
+
+[spectre]
+actif = false
+bandes = 32
+hauteur = 68.0
+masquer_sans_musique = true
+rayon = 10.0
