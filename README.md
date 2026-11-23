@@ -14,8 +14,9 @@ preset: tick "Publish" when saving it in Essaim, then confirm the pull request G
    pour l'adresse est copié dans le presse-papiers : colle-le (Ctrl+V) dans le fichier.
 3. Valide (*Commit changes*, puis *Propose changes*) : GitHub fait une copie du dépôt à ton nom
    et ouvre une pull request.
-4. Après relecture, le preset est ajouté à l'index et apparaît dans la bibliothèque de tout le
-   monde.
+4. Une fois la pull request relue et fusionnée, l'index se met à jour tout seul et le preset
+   apparaît dans la bibliothèque de tout le monde (compter quelques minutes, puis rouvrir les
+   réglages d'Essaim).
 
 Sans Essaim sous la main : exporte le preset (fichier `.toml`) et dépose-le dans `presets/` par
 une pull request.
@@ -24,7 +25,10 @@ une pull request.
 
 - `presets/<nom>.toml` : les presets, tels qu'Essaim les enregistre ;
 - `apercus/<nom>.png` ou `.gif` (facultatif) : image montrée dans la vignette ;
-- `index.json` : la liste lue par Essaim.
+- `index.json` : la liste lue par Essaim, reconstruite par `scripts/index.py` (workflow *Index*)
+  à chaque changement de `presets/` ou d'`apercus/` sur `main`. `auteur` (le compte GitHub qui a
+  ajouté le fichier) et `etiquettes` y sont gardés d'une fois sur l'autre : ils se corrigent à la
+  main dans `index.json`.
 
 ```json
 {"version": 1, "presets": [

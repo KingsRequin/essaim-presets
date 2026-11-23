@@ -1,0 +1,46 @@
+# Reconstruit index.json (la liste lue par Essaim) dès qu'un preset ou un aperçu change sur main.
+# Ne tourne jamais sur une pull request : le contenu proposé n'est indexé qu'une fois fusionné.
+name: Index
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'presets/**'
+      - 'apercus/**'
+      - 'scripts/index.py'
+      - '.github/workflows/index.yml'
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: index
+  cancel-in-progress: false
+
+jobs:
+  index:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      # l'état le plus récent de main, pas le commit qui a déclenché : deux presets fusionnés
+      # coup sur coup donnent deux passages l'un après l'autre, le second repart du premier
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main
+      - name: Reconstruire l'index
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 scripts/index.py
+      - name: Enregistrer l'index s'il a changé
+        run: |
+          git add index.json
+          if git diff --cached --quiet; then
+            echo "Index déjà à jour."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Index : mise à jour automatique"
+          git push
